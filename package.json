@@ -9,6 +9,7 @@
         "dev": "nodemon src/index.js"
     },
     "dependencies": {
+        "axios": "^0.19.2",
         "bootstrap-vue": "^2.15.0",
         "core-js": "^3.6.5",
         "dotenv": "^8.2.0",
