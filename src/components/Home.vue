@@ -1,36 +1,44 @@
 <template>
   <div class="container">
-    <h1 class="display-2">Hello {{ this.user.name }}</h1>
+    <h1 class="display-2">Hello {{ this.projects.title }}</h1>
+    <img
+      class="img-fluid"
+      :src="`/assets/img/${projects.img_url}`"
+      :alt="projects.title"
+    />
   </div>
 </template>
 
 <script lang="js">
-import { Component, Prop, Vue } from "vue-property-decorator";
 import axios from "axios";
 
-@Component
-export default class Home extends Vue {
+export default  {
   data() {
     return {
-      user: "",
+      projects: "",
     };
-  }
+  },
   async created() {
-    const config = {
-      headers: {
-        Accept: "application/json",
-        crossdomain: true,
-        AccessControlAllowOrigin: "*",
-      },
-    };
-    try {
-      const instance = axios.create({
-        baseURL: "http://127.0.0.1:3000",
-      });
-      const res = await instance.get("/users");
-      this.user = res.data[1];
-    } catch (error) {
-      console.log(error);
+    this.fetchData();
+  },
+  methods: {
+    async fetchData () {
+      const config = {
+        headers: {
+          Accept: "application/json",
+          crossdomain: true,
+          AccessControlAllowOrigin: "*",
+        },
+      };
+      try {
+        const instance = axios.create({
+          baseURL: "http://localhost:3000",
+        });
+        const res = await instance.get("/projects");
+        this.projects = res.data[0];
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 }
