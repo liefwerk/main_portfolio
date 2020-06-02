@@ -5,10 +5,10 @@
       <div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <nav-link class="nav-link" to="/">Home</nav-link>
+            <router-link class="nav-link" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <nav-link class="nav-link" to="/projects">Projects</nav-link>
+            <router-link class="nav-link" to="/projects">Projects</router-link>
           </li>
         </ul>
       </div>
