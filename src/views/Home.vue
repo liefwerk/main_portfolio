@@ -2,6 +2,7 @@
   <div>
     <Jumbotron />
     <ShowcasedProject />
+    <Projects />
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 import axios from "axios";
 import Jumbotron from '../components/Jumbotron';
 import ShowcasedProject from '../components/ShowcasedProject';
+import Projects from '../components/Projects';
 
 export default  {
   components: {
     Jumbotron,
-    ShowcasedProject
+    ShowcasedProject,
+    Projects
   },
   data() {
     return {
@@ -35,7 +38,7 @@ export default  {
       try {
         const instance = axios.create({
           baseURL: "http://127.0.0.1:3000",
-        });
+        }, config);
         const res = await instance.get("/projects");
         this.projects = res.data[0];
       } catch (error) {

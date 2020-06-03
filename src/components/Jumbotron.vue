@@ -19,7 +19,7 @@
 export default {};
 </script>
 
-<style scoped>
+<style>
 ul {
   padding-left: 0;
 }
