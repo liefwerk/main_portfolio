@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">Dev</a>
+      <a class="navbar-brand" href="#"></a>
       <div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
