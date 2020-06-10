@@ -1,16 +1,17 @@
 <template>
-  <div class="jumbotron">
+  <div class="jumbotron bg-white">
     <div class="container">
-      <h1>Nathanael Jageni</h1>
+      <h1>Hi, my name is Nathanaël.</h1>
+      <p class="lead">I am a constant-learning web developer living in Montevideo, Uruguay.</p>
       <ul class>
         <li class="badge badge-primary mr-1">webdev</li>
         <li class="badge badge-primary mr-1">design</li>
         <li class="badge badge-primary mr-1">mgmt</li>
         <li class="badge badge-primary mr-1">music</li>
       </ul>
-      <p
-        class="lead"
-      >I am really passionate about code, self-learning and improving my different skills. My everyday languages are French, English, Spanish, HTML, CSS, Javascript and Python.</p>
+      <span class="float-right text-success">
+        <b>Available for work</b>
+      </span>
     </div>
   </div>
 </template>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <Jumbotron />
+    <Services />
     <ShowcasedProject />
     <Projects />
   </div>
@@ -11,12 +12,14 @@ import axios from "axios";
 import Jumbotron from '../components/Jumbotron';
 import ShowcasedProject from '../components/ShowcasedProject';
 import Projects from '../components/Projects';
+import Services from '../components/Services';
 
 export default  {
   components: {
     Jumbotron,
     ShowcasedProject,
-    Projects
+    Projects,
+    Services
   },
   data() {
     return {

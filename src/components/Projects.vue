@@ -1,16 +1,24 @@
-<template v-for="(item, index) in this.projects">
-  <div class="container">
+<template>
+  <div class="container my-5">
     <h2 id="latest">Other projects</h2>
-    <h3>Titre</h3>
-    <div class="my-2">
-      <span class="float-right site_url">Url</span>
-    </div>
-    <div>
-      <ul>
-        <li class="badge badge-secondary mr-1">Tag</li>
-      </ul>
-      <p>Contenu</p>
-      <a class="float-right" href="#">View more</a>
+    <div v-for="project in projects" :key="project.id" class="my-4">
+      <h3>{{ project.title }}</h3>
+      <div class="pb-5">
+        <ul>
+          <li class="badge badge-secondary mr-1" v-for="tag in project.tags" :key="tag">{{ tag }}</li>
+        </ul>
+        <p>{{ project.content }}</p>
+        <a
+          v-if="project.site_url"
+          class="float-right btn btn-outline-info"
+          href="#"
+        >Visit the website</a>
+        <small
+          v-if="!project.site_url"
+          class="float-right"
+          href="#"
+        >The website isn't online anymore.</small>
+      </div>
     </div>
   </div>
 </template>
@@ -45,6 +53,7 @@ export default  {
         projects.forEach(element => {
           if (!element.is_showcased){
             this.projects.push(element)
+            element.tags = element.tags.split(",");
           }
         });
         console.log(this.projects);

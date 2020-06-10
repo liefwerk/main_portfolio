@@ -10,7 +10,7 @@
         :alt="showcasedProject.title"
       />
     </div>
-    <div>
+    <div class="mb-5">
       <ul>
         <li
           v-for="tag in showcasedProject.tags"
@@ -20,7 +20,9 @@
       </ul>
       <h3>{{ this.showcasedProject.title }}</h3>
       <p>{{ this.showcasedProject.content }}</p>
-      <a class="float-right" href="#">View more</a>
+      <div class="text-right">
+        <a href="#">View more</a>
+      </div>
     </div>
   </div>
 </template>
