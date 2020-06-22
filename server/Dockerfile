@@ -3,8 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY ./ .
+RUN npm run dev
 
 FROM nginx as production-stage
 RUN mkdir /app
-RUN npm run dev
 COPY nginx.conf /etc/nginx/nginx.conf
