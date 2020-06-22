@@ -16,5 +16,5 @@ services:
       - ./server:/api
       - /api/node_modules
     ports:
-      -3000:3000
+      - 3000:3000
     container_name: portfolio_app
