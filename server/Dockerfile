@@ -3,4 +3,4 @@ WORKDIR /usr/src/api
 COPY package*.json ./
 RUN npm install
 EXPOSE 3000
-CMD ["node", 'index.js']
+CMD ["npm", "run", "prod"]
