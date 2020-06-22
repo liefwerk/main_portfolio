@@ -1,0 +1,20 @@
+version: '1'
+services:
+  app:
+    build: ./
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - 8000:8000
+    container_name: portfolio
+    depends_on:
+      - api
+  api:
+    build: ./server
+    volumes:
+      - ./server:/api
+      - /api/node_modules
+    ports:
+      -3000:3000
+    container_name: portfolio_app
