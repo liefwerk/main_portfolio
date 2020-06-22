@@ -1,6 +1,6 @@
-FROM node:12 as build-stage
-WORKDIR /usr/src/api
+FROM node:12
+WORKDIR /api
 COPY package*.json ./
 RUN npm install
 EXPOSE 3000
-CMD ["npm", "run", "prod"]
+CMD ["node", "index.js"]
