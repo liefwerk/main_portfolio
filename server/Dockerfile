@@ -1,10 +1,6 @@
-FROM node:latest as build-stage
-WORKDIR /app
+FROM node:12 as build-stage
+WORKDIR /usr/src/api
 COPY package*.json ./
 RUN npm install
-COPY ./ .
-RUN npm run prod
-
-FROM nginx as production-stage
-RUN mkdir /app
-COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 3000
+CMD ["node", 'index.js']
