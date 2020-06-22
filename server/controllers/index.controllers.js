@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { Pool } = require("pg");
 
 const pool = new Pool({
@@ -5,7 +6,7 @@ const pool = new Pool({
   user: "liefwerk",
   password: "JS3j2h9qQNhj7V",
   database: "main_portfolio",
-  post: "5432",
+  port: "5432"
 });
 
 const getProjects = async (req, res) => {
@@ -20,5 +21,5 @@ const getProjects = async (req, res) => {
 };
 
 module.exports = {
-  getProjects,
+  getProjects
 };
