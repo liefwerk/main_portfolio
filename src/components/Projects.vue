@@ -5,19 +5,24 @@
       <h3>{{ project.title }}</h3>
       <div class="pb-5">
         <ul>
-          <li class="badge badge-secondary mr-1" v-for="tag in project.tags" :key="tag">{{ tag }}</li>
+          <li
+            class="badge badge-secondary mr-1"
+            v-for="tag in project.tags"
+            :key="tag"
+          >
+            {{ tag }}
+          </li>
         </ul>
         <p>{{ project.content }}</p>
         <a
           v-if="project.site_url"
           class="float-right btn btn-outline-info"
           href="#"
-        >Visit the website</a>
-        <small
-          v-if="!project.site_url"
-          class="float-right"
-          href="#"
-        >The website isn't online anymore.</small>
+          >Visit the website</a
+        >
+        <small v-if="!project.site_url" class="float-right" href="#"
+          >The website isn't online anymore.</small
+        >
       </div>
     </div>
   </div>
@@ -46,7 +51,7 @@ export default  {
       };
       try {
         const instance = axios.create({
-          baseURL: "http://127.0.0.1:3000",
+          baseURL: "localhost:3000",
         }, config);
         const res = await instance.get("/projects");
         const projects = res.data;
@@ -57,7 +62,7 @@ export default  {
           }
         });
         console.log(this.projects);
-        
+
       } catch (error) {
         console.log(error);
       }
@@ -66,5 +71,4 @@ export default  {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
