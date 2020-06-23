@@ -54,7 +54,8 @@ export default  {
       };
       try {
         const instance = axios.create({
-          baseURL: "http://45.33.98.225:3000",
+          baseURL: "http://localhost:3000",
+          // baseURL: "http://45.33.98.225:3000",
         }, config);
         const res = await instance.get("/projects");
         const projects = res.data;

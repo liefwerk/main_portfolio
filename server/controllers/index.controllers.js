@@ -1,13 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { Pool } = require("pg");
 
-const pool = new Pool({
-  host: process.env.PGHOST,
-  user: process.env.PGUSER,
-  password: process.env.PGDATABASE,
-  database: process.env.PGPASSWORD,
-  port: process.env.PGPORT
-});
+const pool = new Pool();
 
 const getProjects = async (req, res) => {
   try {
