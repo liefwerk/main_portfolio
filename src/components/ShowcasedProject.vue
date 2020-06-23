@@ -2,7 +2,9 @@
   <div class="container">
     <h2 id="latest">Latest project</h2>
     <div class="my-2">
-      <span class="float-right site_url">{{ this.showcasedProject.site_url }}</span>
+      <span class="float-right site_url">{{
+        this.showcasedProject.site_url
+      }}</span>
       <img
         class="img-fluid"
         id="project_img"
@@ -16,7 +18,9 @@
           v-for="tag in showcasedProject.tags"
           :key="tag.id"
           class="badge badge-secondary mr-1"
-        >{{ tag }}</li>
+        >
+          {{ tag }}
+        </li>
       </ul>
       <h3>{{ this.showcasedProject.title }}</h3>
       <p>{{ this.showcasedProject.content }}</p>
@@ -50,7 +54,7 @@ export default  {
       };
       try {
         const instance = axios.create({
-          baseURL: "http://127.0.0.1:3000",
+          baseURL: "http://45.33.98.225:3000",
         }, config);
         const res = await instance.get("/projects");
         const projects = res.data;
@@ -62,7 +66,7 @@ export default  {
             element.tags = element.tags.split(',')
           }
         });
-        
+
       } catch (error) {
         console.log(error);
       }
