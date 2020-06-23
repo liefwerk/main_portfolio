@@ -2,11 +2,11 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  host: "45.33.98.225",
-  user: "liefwerk",
-  password: "JS3j2h9qQNhj7V",
-  database: "main_portfolio",
-  port: "5432"
+  host: process.env.PGHOST,
+  user: process.env.PGUSER,
+  password: process.env.PGDATABASE,
+  database: process.env.PGPASSWORD,
+  port: process.env.PGPORT
 });
 
 const getProjects = async (req, res) => {
