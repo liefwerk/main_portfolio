@@ -25,6 +25,29 @@ export default  {
     return {
       projects: "",
     };
+  },
+  async created() {
+    // this.fetchData();
+  },
+  methods: {
+    async fetchData () {
+      const config = {
+        headers: {
+          Accept: "application/json",
+          crossdomain: true,
+          AccessControlAllowOrigin: "*",
+        },
+      };
+      try {
+        const instance = axios.create({
+          baseURL: "localhost:3000",
+        }, config);
+        const res = await instance.get("/projects");
+        this.projects = res.data[0];
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 }
 </script>
