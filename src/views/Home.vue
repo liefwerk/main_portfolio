@@ -27,7 +27,7 @@ export default  {
     };
   },
   async created() {
-    // this.fetchData();
+    this.fetchData();
   },
   methods: {
     async fetchData () {
@@ -40,7 +40,7 @@ export default  {
       };
       try {
         const instance = axios.create({
-          baseURL: "localhost:3000",
+          baseURL: "http://localhost:3000",
         }, config);
         const res = await instance.get("/projects");
         this.projects = res.data[0];

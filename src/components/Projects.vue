@@ -51,7 +51,7 @@ export default  {
       };
       try {
         const instance = axios.create({
-          baseURL: "localhost:3000",
+          baseURL: "http://localhost:3000",
         }, config);
         const res = await instance.get("/projects");
         const projects = res.data;
@@ -61,8 +61,6 @@ export default  {
             element.tags = element.tags.split(",");
           }
         });
-        console.log(this.projects);
-
       } catch (error) {
         console.log(error);
       }
