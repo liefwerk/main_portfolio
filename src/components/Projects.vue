@@ -1,9 +1,9 @@
 <template>
-  <div class="container my-5">
+  <div class="container py-3 my-5">
     <h2 id="latest">Other projects</h2>
     <div v-for="project in projects" :key="project.id" class="my-4">
       <h3>{{ project.title }}</h3>
-      <div class="pb-5">
+      <div class="pb-3">
         <ul>
           <li
             class="badge badge-secondary mr-1"
@@ -16,7 +16,7 @@
         <p>{{ project.content }}</p>
         <a
           v-if="project.site_url"
-          class="float-right btn btn-outline-info"
+          class="float-right btn btn-outline-primary"
           href="#"
           >Visit the website</a
         >

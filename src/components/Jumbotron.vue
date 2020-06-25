@@ -1,17 +1,23 @@
 <template>
-  <div class="jumbotron bg-white">
+  <div class="jumbotron bg-primary mb-5 rounded-0">
     <div class="container">
-      <h1>Hi, my name is Nathanaël.</h1>
-      <p class="lead">I am a constant-learning web developer living in Montevideo, Uruguay.</p>
+      <div
+        data-letter-crap="/assets/img/bonjour.png"
+        style="width: 500px; height: 100px"
+      ></div>
+      <h1 class="text-light">My name is Nathanaël.</h1>
+      <p class="lead text-light">
+        I am a constant-learning web developer living in Montevideo, Uruguay.
+      </p>
       <ul class>
-        <li class="badge badge-primary mr-1">webdev</li>
-        <li class="badge badge-primary mr-1">design</li>
-        <li class="badge badge-primary mr-1">mgmt</li>
-        <li class="badge badge-primary mr-1">music</li>
+        <li class="badge badge-secondary mr-1">webdev</li>
+        <li class="badge badge-secondary mr-1">design</li>
+        <li class="badge badge-secondary mr-1">mgmt</li>
+        <li class="badge badge-secondary mr-1">music</li>
       </ul>
-      <span class="float-right text-success">
+      <p id="available" class="text-success mt-1 mb-2">
         <b>Available for work</b>
-      </span>
+      </p>
     </div>
   </div>
 </template>
@@ -23,5 +29,14 @@ export default {};
 <style>
 ul {
   padding-left: 0;
+}
+[data-letter-crap] {
+  white-space: pre;
+  overflow: hidden;
+  font-size: 8px;
+  line-height: 10px;
+  font-family: monospace;
+  padding: 0;
+  color: white;
 }
 </style>

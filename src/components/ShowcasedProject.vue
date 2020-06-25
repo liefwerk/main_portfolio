@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container py-3 my-5">
     <h2 id="latest">Latest project</h2>
     <div class="my-2">
       <span class="float-right site_url">{{
@@ -77,16 +77,15 @@ export default  {
 
 <style lang="scss">
 // Required
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-vue/src/index.scss";
 
 #latest::before {
   content: "";
   display: inline-block;
   width: 0.1em;
   height: 0.7em;
-  background-color: $primary;
+  background-color: var(--secondary);
   margin-right: 0.5em;
 }
 
@@ -96,6 +95,8 @@ export default  {
 }
 
 #project_img {
-  border-bottom: solid 0.2em $primary;
+  border-bottom: solid 0.2em var(--secondary);
 }
+
+@import "../assets/custom.scss";
 </style>

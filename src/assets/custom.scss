@@ -1,0 +1,14 @@
+// Include Bootstrap and BootstrapVue SCSS files
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-vue/src/index.scss";
+
+$theme-colors: (
+  primary: #418b83,
+  secondary: #2e4c94,
+  light: #f5f2f2,
+  dark: #141213,
+  success: #e5e9bf,
+);
+
+/* finally, import Bootstrap */
+@import "bootstrap";
